@@ -20,6 +20,7 @@ import MediaItem from './Components/MediaItem/MediaItem';
 
 function App() {
 const [userData, setUserData] = useState(null)
+const [favourites, setfavourites] = useState([]);
   function saveUserData(){
   let encodedToken=  localStorage.getItem('token');
   let decodedToken= jwtDecode(encodedToken);
@@ -28,10 +29,10 @@ setUserData(decodedToken);
 
 let routers=createBrowserRouter([
   {path:'/',element:<Layout userData={userData} LogOut={LogOut}/>,children:[
-    {index:true,element:<ProtectedRoute userData={userData} saveUserData={saveUserData}> <Home /></ProtectedRoute> },
-    {path:"movies",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><Movies /></ProtectedRoute>},
-    {path:"people",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><People /></ProtectedRoute>},
-    {path:"tv",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><Tv /></ProtectedRoute>},
+    {index:true,element:<ProtectedRoute userData={userData} saveUserData={saveUserData}> <Home favourites={favourites} setfavourites={setfavourites} /></ProtectedRoute> },
+    // {path:"movies",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><Movies /></ProtectedRoute>},
+    // {path:"people",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><People /></ProtectedRoute>},
+    // {path:"tv",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><Tv /></ProtectedRoute>},
     {path:"mediaItem/:id/:mediaType",element:<ProtectedRoute userData={userData} saveUserData={saveUserData}><MediaItem /></ProtectedRoute>},
     {path:"login",element:<Login saveUserData={saveUserData} />},
     {path:"register",element:<Register />},

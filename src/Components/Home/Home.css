@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.star{
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 1;
+}
+
+.scl:hover  .star{
+  /* color:red ; */
+  left: 0%;
+}
+
+
+.scl{
+  transition-property: transform;
+  transition-duration: 0.5s;
+  overflow: hidden;
+
+}
+
+.scl:hover{
+  transform: scale(1.05);
+}

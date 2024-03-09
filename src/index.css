@@ -32,11 +32,3 @@ a ,a:hover{
   height: 1px;
   background-color: var(--border-color);
 }
-.scl{
-  transition-property: transform;
-  transition-duration: 0.5s;
-}
-
-.scl:hover{
-  transform: scale(1.05);
-}

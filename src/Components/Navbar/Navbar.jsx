@@ -7,7 +7,7 @@ export default function Navbar({ userData, LogOut }) {
       <nav className="navbar navbar-expand-lg bg-body-transparent">
         <div className="container-fluid mt-1">
           <Link className="navbar-brand text-light" to="#">
-            <h3>NOXE </h3>
+            <h3 className="fw-bold">NOXE</h3>
           </Link>
           <button
             className="navbar-toggler"
@@ -32,25 +32,25 @@ export default function Navbar({ userData, LogOut }) {
                     <h4>Home</h4>
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="movies">
-                    <h4>Movies</h4>
-                  </Link>
+                <li className="nav-item nav-link text-white" style={{cursor:"pointer"}}>
+                  {/* <Link className="nav-link text-white" to="movies"> */}
+                  <a href="#Movies">Movies</a>  
+                  {/* </Link> */}
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link text-white" to="about">
                     <h4>About</h4>
                   </Link>
+                </li> */}
+                <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
+                  {/* <Link className="nav-link text-white" to="people"> */}
+                  <a href="#People">People</a>
+                  {/* </Link> */}
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="people">
-                    <h4>People</h4>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link text-white" to="tv">
-                    <h4>TV</h4>
-                  </Link>
+                <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
+                  {/* <Link className="nav-link text-white" to="tv"> */}
+                    <a href="#tv">Series</a>
+                  {/* </Link> */}
                 </li>
               </ul>
             ) : (
