@@ -23,7 +23,7 @@ export default function Navbar({ userData, LogOut }) {
           <div className="collapse navbar-collapse" id="navbarNav">
             {userData ? (
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+                <li className="nav-item pt-1">
                   <Link
                     className="nav-link text-white"
                     aria-current="page"
@@ -34,21 +34,21 @@ export default function Navbar({ userData, LogOut }) {
                 </li>
                 <li className="nav-item nav-link text-white" style={{cursor:"pointer"}}>
                   {/* <Link className="nav-link text-white" to="movies"> */}
-                  <a href="#Movies">Movies</a>  
+                  <a className="nav-item nav-link text-white pt-0 fs-4" href="#Movies">Movies</a>  
                   {/* </Link> */}
                 </li>
                 
                 <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
                   {/* <Link className="nav-link text-white" to="tv"> */}
-                    <a href="#tv">Series</a>
+                    <a className="nav-item nav-link text-white pt-0 fs-4" href="#tv">Series</a>
                   {/* </Link> */}
                 </li>
                 <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
                   {/* <Link className="nav-link text-white" to="people"> */}
-                  <a href="#People">People</a>
+                  <a className="nav-item nav-link text-white pt-0 fs-4" href="#People">People</a>
                   {/* </Link> */}
                 </li>
-                <li className="nav-item">
+                <li className="nav-item pt-1">
                   <Link className="nav-link text-white" to="about">
                     <h4>Favourites</h4>
                   </Link>
@@ -60,22 +60,22 @@ export default function Navbar({ userData, LogOut }) {
 
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item me-2 d-flex">
-                <a className="nav-link text-white" href="#">
+                <a className=" text-white" href="#">
                   <i className="fab fa-facebook mx-1 fa-2x"></i>
                 </a>
-                <a className="nav-link text-white" href="#">
+                <a className=" text-white" href="#">
                   {" "}
                   <i className="fab fa-instagram mx-1 fa-2x"></i>
                 </a>
-                <a className="nav-link text-white" href="#">
+                <a className=" text-white" href="#">
                   {" "}
                   <i className="fab fa-twitter mx-1 fa-2x"></i>
                 </a>
-                <a className="nav-link text-white" href="#">
+                <a className=" text-white" href="#">
                   {" "}
                   <i className="fab fa-youtube mx-1 fa-2x"></i>
                 </a>
-                <a className="nav-link text-white" href="#">
+                <a className=" text-white" href="#">
                   {" "}
                   <i className="fab fa-spotify mx-1 fa-2x"></i>
                 </a>
@@ -83,10 +83,10 @@ export default function Navbar({ userData, LogOut }) {
               {userData ? 
                 <li className="nav-item">
                   <div className="d-flex  align-items-center">
-                    <span onClick={LogOut} className=" nav-link text-white mx-2">
+                    <span onClick={LogOut} className="  text-white mx-1">
                       <h4>LogOut</h4> 
                     </span>
-                    <span className="mx-2 text-white">
+                    <span className="mx-1 text-white">
                       <h4>Welcome {userData.first_name}</h4>
                     </span>
                   </div>
