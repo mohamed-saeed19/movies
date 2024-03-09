@@ -37,20 +37,21 @@ export default function Navbar({ userData, LogOut }) {
                   <a href="#Movies">Movies</a>  
                   {/* </Link> */}
                 </li>
-                {/* <li className="nav-item">
-                  <Link className="nav-link text-white" to="about">
-                    <h4>About</h4>
-                  </Link>
-                </li> */}
+                
+                <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
+                  {/* <Link className="nav-link text-white" to="tv"> */}
+                    <a href="#tv">Series</a>
+                  {/* </Link> */}
+                </li>
                 <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
                   {/* <Link className="nav-link text-white" to="people"> */}
                   <a href="#People">People</a>
                   {/* </Link> */}
                 </li>
-                <li className="nav-item nav-link text-white"  style={{cursor:"pointer"}}>
-                  {/* <Link className="nav-link text-white" to="tv"> */}
-                    <a href="#tv">Series</a>
-                  {/* </Link> */}
+                <li className="nav-item">
+                  <Link className="nav-link text-white" to="about">
+                    <h4>Favourites</h4>
+                  </Link>
                 </li>
               </ul>
             ) : (

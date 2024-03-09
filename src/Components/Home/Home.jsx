@@ -1,10 +1,9 @@
 import axios from "axios";
-import { link } from "joi";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-export default function Home({setfavourites ,favourites}) {
+export default function Home({setfavourites ,favourites ,favouriteSeries,setfavouriteSeries}) {
 
 
   const [trendigMovies, setTrendigMovies] = useState([]);
@@ -25,7 +24,6 @@ export default function Home({setfavourites ,favourites}) {
   const [starColor, setStarColor] = useState("yellow");
 
   function handleAddToFavourites(fav) {
-    console.log(favourites.length)
     if (starColor === "white" ) {
       setStarColor("yellow");
     } else {
@@ -33,16 +31,20 @@ export default function Home({setfavourites ,favourites}) {
     }
   }
 
-  function addMovieToFavourites(poster,itemName,itemId) {
-  if(!Boolean(favourites.find((item)=> item.id === itemId ))){
-  favourites.push({
-      img:poster,
-      title: itemName,
-      id:itemId
-    })
+  function addMovieToFavourites(movie) {
+  if(!Boolean(favourites.find((item)=> item.id === movie.id ))){
+  favourites.push(movie)
   }else{
-    let filterFavourit = favourites.filter((item)=> item.id !== itemId )
+    let filterFavourit = favourites.filter((item)=> item.id !== movie.id )
     setfavourites(filterFavourit)
+  }
+    }
+  function addSeriesToFavourites(movie) {
+  if(!Boolean(favouriteSeries.find((item)=> item.id === movie.id ))){
+  favouriteSeries.push(movie)
+  }else{
+    let filterFavourit = favouriteSeries.filter((item)=> item.id !== movie.id )
+    setfavouriteSeries(filterFavourit)
   }
     }
 
@@ -81,7 +83,7 @@ export default function Home({setfavourites ,favourites}) {
               <div>
                 <button
                   className="star m-2"
-                  onClick={() => {handleAddToFavourites(movie) ;addMovieToFavourites(movie.poster_path,movie.title,movie.id)}}
+                  onClick={() => {handleAddToFavourites(movie) ;addMovieToFavourites(movie)}}
                 >
                   <i
                     className="fa-solid fa-star"
@@ -110,20 +112,31 @@ export default function Home({setfavourites ,favourites}) {
 
         {trendigSeries.slice(0, 10).map((movie, index) => (
           <div key={index} className="col-md-2 ">
+                          <div className=" position-relative scl  ">
             <Link to={`mediaItem/${movie.id}/${movie.media_type}`}>
-              <div className=" position-relative scl  ">
                 <img
-                  className="w-100 "
+                  className="w-100 ContentImage"
                   src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
                   alt="pho"
                 />
+                            <h6 className="my-2">{movie.name}</h6>
+                            </Link>
                 <div className="bg-transparent p-1 position-absolute top-0 end-0">
                   {movie.vote_average.toFixed(1)}
                 </div>
+                <div>
+                <button
+                  className="star m-2"
+                  onClick={() => {handleAddToFavourites(movie) ;addSeriesToFavourites(movie)}}
+                >
+                  <i
+                    className="fa-solid fa-star"
+                    style={{ color:Boolean(favouriteSeries.find((item)=> item.id === movie.id ))?"yellow":"white"}}
+                  ></i>
+              
+                </button>
               </div>
-            </Link>
-
-            <h6 className="my-2">{movie.name}</h6>
+              </div>
           </div>
         ))}
       </div>
