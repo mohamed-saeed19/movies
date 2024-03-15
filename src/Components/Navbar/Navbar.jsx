@@ -83,7 +83,7 @@ export default function Navbar({ userData, LogOut }) {
               {userData ? 
                 <li className="nav-item">
                   <div className="d-flex  align-items-center">
-                    <span onClick={LogOut} className="  text-white mx-1">
+                    <span onClick={LogOut} className="  text-white mx-1" style={{cursor:"pointer"}}>
                       <h4>LogOut</h4> 
                     </span>
                     <span className="mx-1 text-white">

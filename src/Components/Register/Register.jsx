@@ -57,7 +57,7 @@ export default function Register() {
       navigate("/login");
     } else {
       setLoading(false);
-      setError(data.message);
+      setError("data.message");
     }
   }
 
