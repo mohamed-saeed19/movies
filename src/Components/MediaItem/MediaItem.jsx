@@ -11,7 +11,8 @@ const [itemDetails, setitemDetails] = useState({})
   }
 useEffect(() => {
   getItemDetails();
-}, []);  
+}, []); 
+
   return (
     <>
     <div className="row pt-2">
@@ -21,11 +22,16 @@ useEffect(() => {
       </div>
       <div className="col-md-8">
         <h2>{itemDetails.title} {itemDetails.name}</h2>
+        {itemDetails.birthday?<p className="py-2">Birthday : {itemDetails.birthday}</p>:""}
+        {itemDetails.gender?<p className="py-2">Gender : {itemDetails.gender===1?'Female':'Male'}</p>:""}
+        {itemDetails.place_of_birth?<p className="py-2">Place Of Birth : {itemDetails.place_of_birth}</p>:""}
+        {itemDetails.biography?<p className="py-2">Biography : {itemDetails.biography}</p>:""}
         {itemDetails.vote_average?<p className="py-2">Vote : {itemDetails.vote_average?.toFixed(1)}</p>:""}
         {itemDetails.vote_count?<p className="py-2">Vote Count : {itemDetails.vote_count}</p>:""}
         <p className="py-2">Popularity : {itemDetails.popularity}</p>
         {itemDetails.release_date?<p className="py-2">ReleaseDate : {itemDetails.release_date}</p>:""}
         <p className="text-secondary">{itemDetails.overview}</p>
+
       </div>
     </div>
       

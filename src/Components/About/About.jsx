@@ -18,7 +18,7 @@ export default function About({ setfavourites, favourites ,favouriteSeries,setfa
           <div key={index} className="col-md-2 ">
             <div className=" position-relative scl ">
               <img
-                className="w-100 ContentImage"
+                className="w-100 ContentImage "
                 src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
                 alt="pho"
               />
