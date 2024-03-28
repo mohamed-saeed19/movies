@@ -14,6 +14,7 @@ import { jwtDecode } from "jwt-decode";
 import React, { useEffect, useState } from "react";
 import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import MediaItem from "./Components/MediaItem/MediaItem";
+import MovieContextProvider from "./Components/Context/Store";
 
 function App() {
   const [userData, setUserData] = useState(null);
@@ -79,7 +80,7 @@ function App() {
   }, []);
   return (
     <>
-      <RouterProvider router={routers} />
+    <RouterProvider router={routers} />
     </>
   );
 }

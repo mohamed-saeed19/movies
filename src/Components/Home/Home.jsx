@@ -1,7 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
+import { movieContext } from "../Context/Store";
 
 export default function Home({
   setfavourites,
@@ -9,22 +9,8 @@ export default function Home({
   favouriteSeries,
   setfavouriteSeries,
 }) {
-  const [trendigMovies, setTrendigMovies] = useState([]);
-  const [trendigSeries, setTrendigSeries] = useState([]);
-  const [trendigPeople, setTrendigPeople] = useState([]);
-
-  async function getTrending(MediaType, func) {
-    let { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/${MediaType}/week?api_key=f1aca93e54807386df3f6972a5c33b50`
-    );
-    func(data.results);
-  }
-  useLayoutEffect(() => {
-    getTrending("movie", setTrendigMovies);
-    getTrending("tv", setTrendigSeries);
-    getTrending("person", setTrendigPeople);
-  }, []);
-  const [starColor, setStarColor] = useState("yellow");
+  
+  let{starColor,setStarColor,trendigPeople,trendigSeries,trendigMovies}=useContext(movieContext)
 
   function handleAddToFavourites(fav) {
     if (starColor === "white") {
