@@ -43,7 +43,7 @@ export default function Home({
     <>
       <div className="row" id="Movies">
         <div
-          className="col-md-4 d-flex align-items-center"
+          className="col-md-4 col-sm-3 col-4   d-flex align-items-center"
           href="TrendingMovies"
         >
           <div>
@@ -58,7 +58,7 @@ export default function Home({
           </div>
         </div>
         {trendigMovies.slice(0, 10).map((movie, index) => (
-          <div key={index} className="col-md-2 ">
+          <div key={index} className="col-md-2 col-sm-3 col-4">
             <div className=" position-relative scl ">
               <Link to={`mediaItem/${movie.id}/${movie.media_type}`}>
                 <img
@@ -96,7 +96,7 @@ export default function Home({
         ))}
       </div>
       <div className="row py-5 " id="tv">
-        <div className="col-md-4 d-flex align-items-center">
+        <div className="col-md-4 col-sm-3 col-4 d-flex align-items-center">
           <div>
             <div className="brdr w-25 mb-3"></div>
             <h2 className="h4">
@@ -110,7 +110,7 @@ export default function Home({
         </div>
 
         {trendigSeries.slice(0, 10).map((movie, index) => (
-          <div key={index} className="col-md-2 ">
+          <div key={index} className="col-md-2 col-sm-3 col-4">
             <div className=" position-relative scl  ">
               <Link to={`mediaItem/${movie.id}/${movie.media_type}`}>
                 <img
@@ -148,7 +148,7 @@ export default function Home({
         ))}
       </div>
       <div className="row " id="People">
-        <div className="col-md-4 d-flex align-items-center">
+        <div className="col-md-4 col-sm-3 col-4 d-flex align-items-center">
           <div>
             <div className="brdr w-25 mb-3"></div>
             <h2 className="h4">
@@ -162,7 +162,7 @@ export default function Home({
         </div>
 
         {trendigPeople.slice(0, 10).map((movie, index) => (
-          <div key={index} className="col-md-2 ">
+          <div key={index} className="col-md-2 col-sm-3 col-4">
             <Link to={`mediaItem/${movie.id}/${movie.media_type}`}>
               <div className=" position-relative scl  ">
                 <img
